@@ -1,87 +1,109 @@
 // scripts go here
 
+// the app
 ipsumbucksApp = {};
 
-// text that will appear at the beginning of generated ipsum (length: 4)
-ipsumbucksApp.startText = ["I want a", "I'd like a", "I would like a", "I'll have a"];
+// array of possible text that will appear at the beginning of generated ipsum (length: 6)
+ipsumbucksApp.startText = ["I want a", "I'd like a", "I would like a", "I'll have a", "Gimme a", "I'll get a"];
 
-// main text content of generated ipsum string (length: 20)
+// array of main text content of generated ipsum string (length: 25)
 ipsumbucksApp.mainText = 
 ["vanilla", "chocolate", "orange", "pumpkin spice", "peppermint", 
 "kids temp", "extra hot", "decaf", "extra shot", "half-caf", 
 "solo", "double", "dopio", "triple grande", "light foam",
-"non-dairy", "soy", "almond", "extra matcha", "one pump",];
+"non-dairy", "soy", "almond", "matcha", "one pump", 
+"with", "hold the", "no", "extra", "secret menu",];
 
-// text that will appear at the end of generated ipsum (length: 5)
+// array of possible text that will appear at the end of generated ipsum (length: 5)
 ipsumbucksApp.endText = ["latte", "cappuccino", "americano", "espresso", "phrappuccino"];
 
-// empty string that will be concatonated into the final output.
+// empty string that will be concatonated into the final ipsum output.
 ipsumbucksApp.ipsumOutput = "";
 
 
-
-// this function with build the ipsum string onto a string argument of a length stipulated by limit
+// this function returns a randomly generated string,
+// the size of which is governed by the value of lengthLimit
+// !! lengthLimit is NOT the word count, only loop iterations.
 ipsumbucksApp.stringMaker = function(lengthLimit) {
 
     let randChecker = -1; // initialized below lowest string array value for mainText generation only.
-    let theString = "";
+    let theString = "";  // empty string that will be concatonated and returned.
 
-    // this method provides random array locations in order to build unique ipsum strings
-    // example: randomizer(20) will generate numbers between 0 & 19
+    // this method provides random array locations in order to build unique ipsum strings.
+    // max is the length of the array this random number will be applied to.
+    // checkPrevious update to the last generated number to prevent repeat words in ipsum.
     function getRandomNumber(max, checkPrevious) {
         let num = ( Math.floor( Math.random() * max ) );
 
+        // checks for and prevents repeat word locations.
         while (num === checkPrevious) {
             num = ( Math.floor( Math.random() * max) );
         };
 
+        // update repeat checker for next loop
         checkPrevious = num;
+
         return checkPrevious;
     };  // getRandomNumber(max, checkPrevious)
 
+    // this loop builds the ipsum string.
+    // lengthLimit is a value passed in by the user
+    // eg: tall=15, grande=30, venti=50
     for (let x = 0; x < lengthLimit; x++) {
         let nextString = "";
 
         if (x === 0) {
             // for beginning of ipsum string only
-            let n = ( Math.floor(Math.random() * 4) );
+            let n = ( Math.floor(Math.random() * ipsumbucksApp.startText.length) );
 
             nextString = ipsumbucksApp.startText[n];
 
         } else if (x < (lengthLimit - 1) ) {
-            // for main content of ipsum string 
-            // this function prevents repeats in ipsum
-            let n = getRandomNumber(20, randChecker);
+            // for main content of ipsum string - everything excepting the first and last loop.
+            // getRandomNumber prevents repeats in ipsum string.
+            let n = getRandomNumber(ipsumbucksApp.mainText.length, randChecker);
             
             // update randChecker to prevent repeats
             randChecker = n; 
 
-            nextString = " " + ipsumbucksApp.mainText[n];
+            // add a comma every 6 iterations, for variety
+            // otherwise append the string with a space, as usual
+            if ( x % 5 === 0) {
+                nextString = " " + ipsumbucksApp.mainText[n] + ",";
+            } else {
+                nextString = " " + ipsumbucksApp.mainText[n];
+            }
+
         } else {
             // for end of ipsum string only
-            let n = (Math.floor(Math.random() * 5));
+            let n = (Math.floor(Math.random() * ipsumbucksApp.endText.length));
             nextString = " " + ipsumbucksApp.endText[n] + ".";
         }
 
+        // concatonate ipsum string with nextString's current value 
         theString += nextString;
     } // for loop
 
+    // final completed ipsum string
     return theString;
-
-    // KEEP IN MIND
-    // for (let x = 0; x < 100; x++) {
-    //     console.log(`\nCurrent checker: ${randChecker}`);
-    //     randChecker = getRandomNumber(20, randChecker);
-    //     console.log(`Random number: ${randChecker}`)
-    // }
     
 };  // ipsumbucksApp.stringMaker(theString, limit)
 
 
+// execution on button click
 $(function () {
-    // put code here!!
-    ipsumbucksApp.ipsumOutput = ipsumbucksApp.stringMaker(50);
+
+    // size value from radio buttons that define ipsum length
+    let ipsumSize = $('input[type="radio"]:checked').val();
+    console.log(ipsumSize);
+
+    // generate a string based on the integer value of ipsumSize
+    ipsumbucksApp.ipsumOutput = ipsumbucksApp.stringMaker(ipsumSize);
     console.log(ipsumbucksApp.ipsumOutput);
+
+    // $('input[type="radio"]').on('click', function() {
+    //     console.log( $(this).val() );
+    // });
 
 });
 
