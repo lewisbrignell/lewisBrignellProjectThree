@@ -2,10 +2,10 @@
 
 form {
     position: relative;
-    top: 105px;
+    top: 100px;
     padding: 30px;
 
-    background: $bucksBrown;
+    background: $formBackground;
 
     border-radius: 20px;
     box-shadow: #6d4e2f 0 0 3px;
@@ -13,7 +13,7 @@ form {
     textarea,
     label,
     button {
-        color: $bucksGreen;
+        color: $textGreen;
         text-shadow: #024725 1px 0 1px;
     }
 
@@ -33,15 +33,16 @@ form {
     input[type="radio"]:focus ~ label {
 
         // add something nicer here
-        background: $bucksWhite;
-        box-shadow: 0 0 15px $bucksGreen;
+        box-shadow: 0 0 15px $textGreen;
+
+        margin-left: 10px;
     }
 
     .container i {
         font-size: 3.0rem;
         margin-right: 0.5rem;
 
-        color: $bucksGreen;
+        color: $textGreen;
 
         // icon to toggle in jQuery later!
         // <i class="far fa-check-square"></i>
@@ -49,9 +50,9 @@ form {
 
     textarea,
     button {
-        border: 4px solid $bucksGreen;
+        border: 4px solid $textGreen;
         border-radius: 5px;
-        background: $bucksBrown;
+        background: $formBackground;
     }
 
     textarea {
@@ -88,7 +89,9 @@ form {
     button:hover,
     button:focus {
         background: $bucksWhite;
-        box-shadow: 0 0 15px $bucksGreen;
+        box-shadow: 0 0 15px $textGreen;
+
+        margin-bottom: 15px;
     }
 
 }

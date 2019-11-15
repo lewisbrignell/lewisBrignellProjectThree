@@ -1,8 +1,12 @@
 // variables go here
 
 $bucksGreen: #036635;
+$textGreen: #034926;
+
 $bucksWhite: #f3f3f3;
+
 $bucksBrown: #ad8762;
+$formBackground: #E3D6CF;
 
 
 // import other .scss files here
@@ -156,9 +160,7 @@ footer {
     height: 43px;
 
     padding: 5px;
-
-    // to distinguish the copy right <p> from others
-    // on the page
+    
     .copyright {
         font-weight: 400;
         font-size: 2.6rem;

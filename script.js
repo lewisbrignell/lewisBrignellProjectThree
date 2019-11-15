@@ -114,7 +114,11 @@ $(function () {
         ipsumbucksApp.ipsumOutput = ipsumbucksApp.stringMaker(ipsumSize);
 
         // display ipsum text on web page's text area
-        $('textarea').val(ipsumbucksApp.ipsumOutput);
+        // and automatically highlight ipsum text
+        // clarifies to user that text may be copied and altered
+        $('textarea').val(ipsumbucksApp.ipsumOutput).select();;
+
+        
     });
     
 }); // /document

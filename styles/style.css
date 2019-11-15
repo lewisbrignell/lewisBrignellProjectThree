@@ -181,9 +181,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 form {
   position: relative;
-  top: 105px;
+  top: 100px;
   padding: 30px;
-  background: #ad8762;
+  background: #E3D6CF;
   border-radius: 20px;
   -webkit-box-shadow: #6d4e2f 0 0 3px;
           box-shadow: #6d4e2f 0 0 3px;
@@ -192,7 +192,7 @@ form {
 form textarea,
 form label,
 form button {
-  color: #036635;
+  color: #034926;
   text-shadow: #024725 1px 0 1px;
 }
 
@@ -210,22 +210,22 @@ form input[type="radio"]:hover + i,
 form input[type="radio"]:focus + i,
 form input[type="radio"]:hover ~ label,
 form input[type="radio"]:focus ~ label {
-  background: #f3f3f3;
-  -webkit-box-shadow: 0 0 15px #036635;
-          box-shadow: 0 0 15px #036635;
+  -webkit-box-shadow: 0 0 15px #034926;
+          box-shadow: 0 0 15px #034926;
+  margin-left: 10px;
 }
 
 form .container i {
   font-size: 3.0rem;
   margin-right: 0.5rem;
-  color: #036635;
+  color: #034926;
 }
 
 form textarea,
 form button {
-  border: 4px solid #036635;
+  border: 4px solid #034926;
   border-radius: 5px;
-  background: #ad8762;
+  background: #E3D6CF;
 }
 
 form textarea {
@@ -260,8 +260,9 @@ form button {
 form button:hover,
 form button:focus {
   background: #f3f3f3;
-  -webkit-box-shadow: 0 0 15px #036635;
-          box-shadow: 0 0 15px #036635;
+  -webkit-box-shadow: 0 0 15px #034926;
+          box-shadow: 0 0 15px #034926;
+  margin-bottom: 15px;
 }
 
 h1,
