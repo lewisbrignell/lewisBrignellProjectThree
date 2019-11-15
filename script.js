@@ -17,9 +17,16 @@ ipsumbucksApp.mainText =
 // array of possible text that will appear at the end of generated ipsum (length: 5)
 ipsumbucksApp.endText = ["latte", "cappuccino", "americano", "espresso", "phrappuccino"];
 
-// empty string that will be concatonated into the final ipsum output.
-ipsumbucksApp.ipsumOutput = "";
 
+ipsumbucksApp.init = function() {
+
+    // empty string that will be concatonated into the final ipsum output.
+    ipsumbucksApp.ipsumOutput = "";
+
+    // clear the textarea on first visit & on page refresh
+    $('textarea').val(ipsumbucksApp.ipsumOutput);
+
+}; // init()
 
 // this function returns a randomly generated string,
 // the size of which is governed by the value of lengthLimit
@@ -86,47 +93,28 @@ ipsumbucksApp.stringMaker = function(lengthLimit) {
 
     // final completed ipsum string
     return theString;
-    
-};  // ipsumbucksApp.stringMaker(theString, limit)
+
+};  // ipsumbucksApp.stringMaker(limit)
 
 
 // execution on button click
 $(function () {
 
-    // size value from radio buttons that define ipsum length
-    let ipsumSize = $('input[type="radio"]:checked').val();
-    console.log(ipsumSize);
+    // initialize page
+    ipsumbucksApp.init();
 
-    // generate a string based on the integer value of ipsumSize
-    ipsumbucksApp.ipsumOutput = ipsumbucksApp.stringMaker(ipsumSize);
-    console.log(ipsumbucksApp.ipsumOutput);
+    $('button').on('click', function(e) {
+        // prevent default button action (leaving the current page)
+        e.preventDefault();
 
-    // $('input[type="radio"]').on('click', function() {
-    //     console.log( $(this).val() );
-    // });
+        // size value from radio buttons that define ipsum length
+        let ipsumSize = $('input[type="radio"]:checked').val();
 
-});
+        // generate a string based on the integer value of ipsumSize
+        ipsumbucksApp.ipsumOutput = ipsumbucksApp.stringMaker(ipsumSize);
 
-
-// ---- MVP Pseudo code, user clicks the 'generate ipsum' button ----
-
-// if there is content already displayed on the text area, it is cleared.
-
-// initialize variables
-
-// a for loop initiates and will repeat as many times as stipulated by 
-// the radio button value that is selected small=15 medium = 30 large=50.
-// * medium will be selected by default.
-
-// during the first run of the loop, a blank string is initialized, an initial phrase is 
-// randomly selected from an initial phrase array and is appended to the string.
-
-// from the second until the second-last runs of the loop, additional words are appended to the 
-// string -- an if statement confirms that no word repeats twice in a row.
-
-// a comma is added after every 6th word, for variety.
-
-// on the last run of the loop a final beverage word - selected randomly from a
-// beverage array - and a period are appended to the string.
-
-// the string value is then assigned to the document's text area.
+        // display ipsum text on web page's text area
+        $('textarea').val(ipsumbucksApp.ipsumOutput);
+    });
+    
+}); // /document
