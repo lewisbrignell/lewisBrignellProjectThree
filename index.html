@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/ae58f79f12.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Ipsumbucks</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo rotates">
+
+            <!-- Coffee icon by Arthur Shlain from the Noun Project -->
+            <img src="./assets/noun_Coffee_607242.png" alt="Coffee icon by Arthur Shlain from the Noun Project">
+        </div>
+
+        <h1>ipsumbucks</h1>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <form action="submit" class="flexParent">
+                <textarea name="delivery" id="delivery" placeholder="Collect your ipsum here!"></textarea>
+                <fieldset class="flexParent">
+                    <legend class="visuallyHidden">Choose your ipsum size</legend>
+
+                    <div class="container">
+                        <input type="radio" id="tall" name="size" value="15">
+                        
+                        <i class="far fa-square"></i>
+
+                        <label for="tall">Tall</label>
+                    </div>
+
+                    <div class="container">
+                        <input type="radio" id="grande" name="size" value="30">
+                        
+                        <i class="far fa-square"></i>
+                        
+                        <label for="grande">Grande</label>
+                    </div>
+                    
+                    <div class="container">
+                        <input type="radio" id="venti" name="size" value="50">
+                        
+                        <i class="far fa-square"></i>
+
+                        <label for="venti">Venti</label>
+                    </div>
+                </fieldset>
+                <button type="submit">Make my Ipsum!</button>
+            </form>
+        </div> <!-- /.wrapper -->
+    </main>
+
+    <footer>
+        <p class="copyright">
+            Lewis Brignell © 2019
+        </p>
+    </footer>
+    
+
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script src="script.js"></script>
+</body>
+</html>

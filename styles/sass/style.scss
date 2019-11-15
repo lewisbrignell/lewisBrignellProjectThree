@@ -1,0 +1,169 @@
+// variables go here
+
+$bucksGreen: #036635;
+$bucksWhite: #f3f3f3;
+$bucksBrown: #ad8762;
+
+
+// import other .scss files here
+
+@import "setup";
+@import "form";
+
+
+// stripping styles go here
+
+h1,
+fieldset,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+// base styles go here
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    background: $bucksWhite;
+    color: $bucksWhite;
+}
+
+.wrapper {
+  width: 60%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// to better control images
+img {
+    width: 100%;
+}
+
+header,
+footer {
+    background: $bucksGreen;
+}
+
+h1,
+.copyright {
+    text-align: center;
+}
+
+// class that turns the element it's applied to
+// into a flex parent 
+.flexParent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+// styles for header elements go here
+
+header {
+    height: 101px;
+}
+
+// this class contains the spinning cup .png
+.logo {
+    width: 15rem;
+    height: 15rem;
+    background: $bucksBrown;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    img {
+        // this hides a bit of additional content
+        clip-path: inset(0 0 18px 0);
+        
+        position: relative;
+        top: 10px;
+    }
+
+}
+
+// Continuous rotation solution provided by
+// Kirk Strobeck on Stackoverflow
+@-webkit-keyframes {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+// this class applies rotation to the logo
+.rotates {
+  -webkit-animation: rotating 8s linear infinite;
+  -moz-animation: rotating 8s linear infinite;
+  -ms-animation: rotating 8s linear infinite;
+  -o-animation: rotating 8s linear infinite;
+  animation: rotating 8s linear infinite;
+}
+
+h1 {
+    font-size: 8.0rem;
+    text-transform: uppercase;
+    letter-spacing: 1.9px;
+}
+
+
+// styles for main elements go here
+
+main {
+    height: 633px;
+    text-align: center;
+
+    // makes it look like a cup with a collar!
+    background: linear-gradient(to bottom, $bucksWhite 0%, $bucksWhite 30%, $bucksBrown 30%, $bucksBrown 70%, $bucksWhite 70%, $bucksWhite 100%);
+}
+
+
+// styles for footer elements go here
+
+footer {
+    height: 43px;
+
+    padding: 5px;
+
+    // to distinguish the copy right <p> from others
+    // on the page
+    .copyright {
+        font-weight: 400;
+        font-size: 2.6rem;
+    }
+}
+
+
+
