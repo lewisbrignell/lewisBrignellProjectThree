@@ -28,13 +28,13 @@ form {
 
     // for when the user hovers/focusses on the 
     // radio label OR on its respective icon
-    input[type="radio"]:hover ~ i,
-    input[type="radio"]:focus ~ i, 
-    input[type="radio"]:hover ~ label,
-    input[type="radio"]:focus ~ label,
+    i:hover,
+    i:focus, 
+    input[type="radio"]:hover + label,
+    input[type="radio"]:focus + label,
     input[type="radio"] ~ i:hover,
     input[type="radio"] ~ i:focus {
-
+        
         padding-left: 10px;
         transition: all 0.2s ease;    
     }

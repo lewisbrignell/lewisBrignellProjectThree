@@ -103,7 +103,9 @@ $(function () {
     // initialize page
     ipsumbucksApp.init();
 
+    // main ipsum execution on button click
     $('button').on('click', function(e) {
+
         // prevent default button action (leaving the current page)
         e.preventDefault();
 
@@ -118,7 +120,34 @@ $(function () {
         // clarifies to user that text may be copied and altered
         $('textarea').val(ipsumbucksApp.ipsumOutput).select();;
 
+    });
+
+    // when the user selects a radio button, a checkmark icon indicates their choice
+    $('input[type = "radio"]').on('click', function() {
         
+        // all radio button icons are reset to blank squares
+        $('input[type="radio"]').prev().removeClass('fa-check-square').addClass('fa-square');
+
+        // a checkmarked box icon is displayed on the checked radio button
+        $(this).prev().toggleClass('fa-square fa-check-square');
+
+    });
+
+    // when the user selects the checkbox icon,
+    // its correpsonding radio button is set to checked=true,
+    // and a checkmark icon indicates their choice
+    $('input[type = "radio"]').prev().on('click', function () {
+
+        // the checkbox corresponding to the clicked icon is
+        // set to checked=true
+        $(this).next().prop('checked', true)
+
+        // all radio button icons are reset to blank squares
+        $('input[type="radio"]').prev().removeClass('fa-check-square').addClass('fa-square');
+
+        // a checkmarked box icon is displayed on the checked radio button
+        $(this).toggleClass('fa-square fa-check-square');
+
     });
     
 }); // /document

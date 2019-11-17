@@ -205,10 +205,10 @@ form input[type="radio"] {
   opacity: 0;
 }
 
-form input[type="radio"]:hover ~ i,
-form input[type="radio"]:focus ~ i,
-form input[type="radio"]:hover ~ label,
-form input[type="radio"]:focus ~ label,
+form i:hover,
+form i:focus,
+form input[type="radio"]:hover + label,
+form input[type="radio"]:focus + label,
 form input[type="radio"] ~ i:hover,
 form input[type="radio"] ~ i:focus {
   padding-left: 10px;
