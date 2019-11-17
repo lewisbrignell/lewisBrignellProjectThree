@@ -42,9 +42,9 @@ body {
 }
 
 .wrapper {
-  width: 60%;
-  max-width: 1200px;
-  margin: 0 auto;
+    width: 60%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 // to control image dimensions
@@ -66,10 +66,10 @@ h1,
 // into a flex parent that centers its descendents
 // and puts space between them
 .flexParent {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -81,8 +81,8 @@ header {
 
 // this class contains the spinning cup .png
 .logo {
-    width: 15rem;
-    height: 15rem;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
 
     position: absolute;
@@ -172,6 +172,62 @@ footer {
         font-size: 2.6rem;
     }
 }
+
+// general media queries go here
+// please find form-specific media queries 
+// in _form.scss
+
+@media (max-width: 814px) {
+  
+    .wrapper {
+        width: 90%;
+        max-width: 814px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px; 
+    }
+
+    h1 {
+        padding-top: 20px;
+        font-size: 5.0rem;
+    }
+
+} // @media (max-width: 814px)
+
+@media (max-width: 512px) {
+
+    h1 {
+        text-align: right;
+    }
+
+} // @media (max-width: 512px)
+
+@media (max-width: 436px) {
+
+    .wrapper {
+        width: 98%;
+        max-width: 436px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 4.5rem;
+        text-align: center;
+    }
+
+    .logo {
+        top: 108px;
+        left: 15px;
+    }
+
+    main {
+      height: 740px;
+    }
+
+} // @media (max-width: 436px)
 
 
 

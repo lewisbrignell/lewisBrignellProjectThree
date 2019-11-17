@@ -19,7 +19,9 @@
             <img src="./assets/noun_Coffee_607242.png" alt="Coffee icon by Arthur Shlain from the Noun Project">
         </div>
 
-        <h1>ipsumbucks</h1>
+        <div class="wrapper">
+            <h1>ipsumbucks</h1>
+        </div>
 
     </header>
 
@@ -28,8 +30,6 @@
 
             <form action="submit" class="flexParent">
 
-                <textarea name="delivery" id="delivery" placeholder="Collect your ipsum here!"></textarea>
-
                 <fieldset class="flexParent">
 
                     <legend class="visuallyHidden">Choose your ipsum size</legend>
@@ -37,7 +37,7 @@
                     <div class="container">
 
                         <i class="far fa-square" aria-hidden="true"></i>
-                        
+
                         <input type="radio" id="tall" name="size" value=15>
                         <label for="tall">Tall</label>
                         
@@ -66,6 +66,8 @@
                 </fieldset>
 
                 <button type="submit">Make my Ipsum!</button>
+
+                <textarea name="delivery" id="delivery" placeholder="Collect your ipsum here!"></textarea>
 
             </form>
 
