@@ -1,18 +1,20 @@
 // variables go here
 
-$bucksGreen: #036635;
-$textGreen: #034926;
+$bucksGreen: #036635;  // header & footer background colour
 
-$bucksWhite: #f3f3f3;
+$textGreen: #034926;  // form text and border colour, darker for accessibility
 
-$bucksBrown: #ad8762;
-$formBackground: #E3D6CF;
+$bucksWhite: #f3f3f3;  // colour of h1, footer .copyright text and neutral background 
+
+$bucksBrown: #ad8762;  // background colour to evoke image of a coffee sleeve 
+
+$formBackground: #E3D6CF;  // form background colour, lighter for accessibility
 
 
 // import other .scss files here
 
-@import "setup";
-@import "form";
+@import "setup";  // contains setup code snippet
+@import "form";  // contains form styles 
 
 
 // stripping styles go here
@@ -34,8 +36,9 @@ html {
 body {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 700;
-    background: $bucksWhite;
     color: $bucksWhite;
+
+    background: $bucksWhite;
 }
 
 .wrapper {
@@ -44,7 +47,7 @@ body {
   margin: 0 auto;
 }
 
-// to better control images
+// to control image dimensions
 img {
     width: 100%;
 }
@@ -60,7 +63,8 @@ h1,
 }
 
 // class that turns the element it's applied to
-// into a flex parent 
+// into a flex parent that centers its descendents
+// and puts space between them
 .flexParent {
   display: flex;
   flex-wrap: wrap;
@@ -79,19 +83,20 @@ header {
 .logo {
     width: 15rem;
     height: 15rem;
-    background: $bucksBrown;
     border-radius: 50%;
 
     position: absolute;
     top: 15px;
     left: 15px;
 
+    background: $bucksBrown;
+
     img {
-        // this hides a bit of additional content
-        clip-path: inset(0 0 18px 0);
-        
         position: relative;
         top: 10px;
+
+        // this hides a bit of additional content
+        clip-path: inset(0 0 18px 0);
     }
 
 }
@@ -135,6 +140,7 @@ header {
   -o-animation: rotating 8s linear infinite;
   animation: rotating 8s linear infinite;
 }
+
 
 h1 {
     font-size: 8.0rem;
