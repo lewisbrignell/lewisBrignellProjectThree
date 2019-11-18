@@ -91,6 +91,8 @@ header {
 
     background: $bucksBrown;
 
+    display: none;
+
     img {
         position: relative;
         top: 10px;
@@ -177,6 +179,14 @@ footer {
 // please find form-specific media queries 
 // in _form.scss
 
+@media (max-width: 1480px) {
+
+  // rotating logo does not appear on very large displays
+  .logo {
+    display: block;
+  }
+}
+
 @media (max-width: 814px) {
   
     .wrapper {
@@ -219,8 +229,7 @@ footer {
     }
 
     .logo {
-        top: 108px;
-        left: 15px;
+        display: none;
     }
 
     main {

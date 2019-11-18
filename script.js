@@ -3,19 +3,24 @@
 // the app
 ipsumbucksApp = {};
 
-// array of possible text that will appear at the beginning of generated ipsum (length: 6)
-ipsumbucksApp.startText = ["I want a", "I'd like a", "I would like a", "I'll have a", "Gimme a", "I'll get a"];
+// array of possible text that will appear at the beginning of generated ipsum (length: 10)
+ipsumbucksApp.startText = 
+["I want a", "I'd like a", "I would like a", "I'll have a", "Gimme a",
+ "I'll get a", "I demand a", "I desperately need a", "How about a", "Gimme your best"];
 
-// array of main text content of generated ipsum string (length: 25)
+// array of main text content of generated ipsum string (length: 30)
 ipsumbucksApp.mainText = 
 ["vanilla", "chocolate", "orange", "pumpkin spice", "peppermint", 
 "kids temp", "extra hot", "decaf", "extra shot", "half-caf", 
-"solo", "double", "dopio", "triple grande", "light foam",
+"solo", "double", "dopio", "grande", "light foam",
 "non-dairy", "soy", "almond", "matcha", "one pump", 
-"with", "hold the", "no", "extra", "secret menu",];
+"with", "hold the", "triple", "extra", "secret menu",
+"tall", "red eye", "caramel", "sugar-free", "cinnamon dolce"];
 
-// array of possible text that will appear at the end of generated ipsum (length: 5)
-ipsumbucksApp.endText = ["latte", "cappuccino", "americano", "espresso", "phrappuccino"];
+// array of possible text that will appear at the end of generated ipsum (length: 10)
+ipsumbucksApp.endText = 
+["latte", "cappuccino", "americano", "espresso", "phrappuccino",
+"caramel apple spice", "double shot", "macchiato", "cortado", "flat white"];
 
 
 ipsumbucksApp.init = function() {
