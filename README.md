@@ -2,7 +2,7 @@
 
 [Try it yourself!](https://lewisbrignell.github.io/lewisBrignellProjectThree/)
 
-![screen shot of the project]()
+![screen shot of the project](screen-shot.png)
 
 ## What is it?
 
